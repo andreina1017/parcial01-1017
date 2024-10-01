@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class ConversorTemperatura;
+    public static double celsiusAFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    
+    public static double fahrenheitACelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduce la temperatura: ");
+        double temperatura = scanner.nextDouble();
+        
+        
+        System.out.println("Elige la conversión: ");
+        System.out.println("1. Celsius a Fahrenheit");
+        System.out.println("2. Fahrenheit a Celsius");
+        int opcion = scanner.nextInt();
+        
+        switch (opcion) {
+            case 1:
+                double fahrenheit = celsiusAFahrenheit(temperatura);
+                System.out.println(temperatura + " grados Celsius son " + fahrenheit + " grados Fahrenheit.");
+                break;
+            case 2:
+                double celsius = fahrenheitACelsius(temperatura);
+                System.out.println(temperatura + " grados Fahrenheit son " + celsius + " grados Celsius.");
+                break;
+            default:
+                System.out.println("no valido");
+        }
+        
+        scanner.close();
+    }
